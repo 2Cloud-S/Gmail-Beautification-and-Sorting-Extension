@@ -1,0 +1,24 @@
+<div id="root"></div>
+
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+
+<script type="text/babel">
+    class Popup extends React.Component {
+        render() {
+            return (
+                <div className="popup">
+                    <h1>Gmail Beautification and Sorting Extension</h1>
+                    <div className="template-gallery" id="template-gallery"></div>
+                    <div className="template-preview" id="template-preview"></div>
+                </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<Popup />, document.getElementById('root'));
+</script>
+
+<script src="scripts/template-gallery.js"></script>
+<script src="scripts/template-preview.js"></script>

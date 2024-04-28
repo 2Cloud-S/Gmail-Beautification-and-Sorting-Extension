@@ -1,0 +1,28 @@
+<div class="settings">
+        <h1>Settings</h1>
+        <label for="sorting-select">Sorting Preference:</label>
+        <select id="sorting-select">
+            <option value="default">Default</option>
+            <option value="date">Date</option>
+            <option value="subject">Subject</option>
+            <option value="sender">Sender</option>
+        </select>
+        <button id="save-button">Save</button>
+</div>
+
+<script>
+    // Retrieve the sorting preference from local storage
+    var sortingPreference = localStorage.getItem("sortingPreference");
+
+    // Set the selected option based on the sorting preference
+    if (sortingPreference) {
+        document.getElementById("sorting-select").value = sortingPreference;
+    }
+
+    // Save the selected sorting preference to local storage when the save button is clicked
+    document.getElementById("save-button").addEventListener("click", function() {
+        var selectedOption = document.getElementById("sorting-select").value;
+        localStorage.setItem("sortingPreference", selectedOption);
+        alert("Sorting preference saved!");
+    });
+</script>

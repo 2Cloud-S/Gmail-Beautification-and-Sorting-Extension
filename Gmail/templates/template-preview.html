@@ -1,0 +1,34 @@
+<div class="template-preview">
+    <h1>Template Preview</h1>
+    <div id="template-content"></div>
+    <div class="customization-options">
+        <h1>Customization Options</h1>
+        <label for="color-picker">Color:</label>
+        <input type="color" id="color-picker" name="color-picker">
+        <label for="font-size">Font Size:</label>
+        <input type="number" id="font-size" name="font-size" min="10" max="50" step="1">
+        <label for="text-content">Text Content:</label>
+        <textarea id="text-content" name="text-content" rows="4" cols="50"></textarea>
+    </div>
+</div>
+
+<script src="../scripts/template-preview.js"></script>
+
+<script>
+    const colorPicker = document.getElementById('color-picker');
+    const fontSizeInput = document.getElementById('font-size');
+    const textContentInput = document.getElementById('text-content');
+    const templateContent = document.getElementById('template-content');
+
+    colorPicker.addEventListener('input', () => {
+        templateContent.style.color = colorPicker.value;
+    });
+
+    fontSizeInput.addEventListener('input', () => {
+        templateContent.style.fontSize = fontSizeInput.value + 'px';
+    });
+
+    textContentInput.addEventListener('input', () => {
+        templateContent.textContent = textContentInput.value;
+    });
+</script>
